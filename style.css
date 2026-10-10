@@ -296,14 +296,18 @@ body.drawer-open { overflow: hidden; }
 .post-body blockquote {
   margin: 1.8em 0; padding: 4px 0 4px 20px;
   border-left: 3px solid var(--accent);
-  color: var(--text-2);
 }
+/* 티스토리 content.css의 고정 색(#666/#333, id 선택자)을 테마 색으로 덮어씀 */
+.post-body blockquote,
+.post-body blockquote p { color: var(--text-2) !important; }
 /* 티스토리 인용구: style1 = 따옴표, style2 = 세로 바(기본 스타일 그대로), style3 = 박스 */
 /* 티스토리가 배경 이미지로 넣는 회색 따옴표는 제거하고, 위(“) 아래(”) 따옴표를 직접 그림 */
 .post-body blockquote[data-ke-style="style1"] {
   border: 0 !important; padding: 0 !important; background: none !important;
-  text-align: center; font-size: 1.1em; color: var(--text);
+  text-align: center; font-size: 1.1em;
 }
+.post-body blockquote[data-ke-style="style1"],
+.post-body blockquote[data-ke-style="style1"] p { color: var(--text) !important; }
 .post-body blockquote[data-ke-style="style1"]::before,
 .post-body blockquote[data-ke-style="style1"]::after {
   display: block;
@@ -312,7 +316,8 @@ body.drawer-open { overflow: hidden; }
 .post-body blockquote[data-ke-style="style1"]::before { content: "\201C"; margin-bottom: 8px; }
 .post-body blockquote[data-ke-style="style1"]::after { content: "\201D"; margin-top: 16px; }
 .post-body blockquote[data-ke-style="style3"] {
-  padding: 18px 22px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-soft);
+  padding: 18px 22px !important; border: 1px solid var(--border) !important; border-radius: 8px;
+  background: var(--bg-soft) !important;
 }
 /* 표: 티스토리 에디터가 넣는 인라인 height 무시 → 항상 전체 표시 */
 .post-body table { width: 100%; margin: 2em 0; border-collapse: collapse; font-size: 15px; }
@@ -461,8 +466,12 @@ body.drawer-open { overflow: hidden; }
 .tt-comment-cont .tt-box-textarea,
 .tt-comment-cont .tt-inner-g { background: transparent !important; }
 .tt-comment-cont .tt-inner-g {
-  background: var(--bg-soft) !important; border: 1px solid var(--border) !important; border-radius: 10px; overflow: hidden;
+  background: var(--bg-soft) !important; border: 1px solid var(--border) !important; border-radius: 10px;
+  overflow-y: auto !important; /* 티스토리 기본값 scroll → 빈 스크롤바 띠 제거 */
 }
+.tt-comment-cont .tt_txt_user { color: var(--text-2) !important; } /* 로그인 시 입력칸 안 닉네임 */
+.tt-comment-cont .tt-txt-mention,
+.tt-comment-cont .tt-txt-mention::before { background-color: var(--inline-code-bg) !important; color: var(--text) !important; }
 .tt-comment-cont .tt-inner-g:focus-within { border-color: var(--accent) !important; }
 .tt-comment-cont .tt-cmt:empty::before,
 .tt-comment-cont input::placeholder { color: var(--text-3) !important; }
