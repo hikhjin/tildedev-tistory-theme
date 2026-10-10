@@ -490,7 +490,7 @@ body.drawer-open { overflow: hidden; }
 .site-footer {
   max-width: calc(var(--content-w) + 48px);
   margin: 0 auto; padding: 32px 24px 48px;
-  display: flex; justify-content: space-between;
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px;
   border-top: 1px solid var(--border);
   font: 12px var(--font-mono); color: var(--text-3);
 }

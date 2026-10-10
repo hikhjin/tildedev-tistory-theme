@@ -228,6 +228,12 @@
     el.textContent = '⏱ ' + Math.max(1, Math.round(chars / 500)) + ' min read';
   }
 
+  /* ---------- Footer year ---------- */
+  function initYear() {
+    var el = $('#copyright-year');
+    if (el) el.textContent = new Date().getFullYear();
+  }
+
   function throttle(fn) {
     var ticking = false;
     return function () {
@@ -245,6 +251,7 @@
     initToc();
     initScroll();
     initReadingTime();
+    initYear();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
