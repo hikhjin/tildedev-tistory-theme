@@ -98,3 +98,15 @@ python3 preview/build.py && python3 -m http.server 4173
 - 글 상세: `http://localhost:4173/preview/post.html`
 
 `style.css` · `script.js` 수정은 새로고침만, `skin.html` 수정은 `build.py`를 다시 실행하세요. 생성된 HTML은 `.gitignore`로 제외됩니다. 치환자를 더미 값으로 채운 것이라 실제 티스토리 출력과 차이가 있어요. 특히 네임카드 · 댓글 · 공감 버튼처럼 티스토리가 런타임에 넣는 영역은 미리보기에 없으니 실제 블로그에서 확인하세요.
+
+## 라이선스
+
+© 2026 [hikhjin](https://github.com/hikhjin). All rights reserved.
+
+**허용**
+- 개인 블로그에 적용
+- 본인 블로그에 맞게 수정
+
+**금지**
+- 상업적 이용 및 유료 판매
+- 스킨 파일 또는 수정본 재배포 (공유할 때는 이 저장소 링크로)

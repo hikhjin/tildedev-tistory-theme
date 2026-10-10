@@ -4,12 +4,12 @@
     <name>TildeDev</name>
     <version>0.1.0</version>
     <description><![CDATA[개발/기술 블로그용 미니멀 스킨. 라이트/다크, 코드 하이라이트, 목차, 읽기 진행바.]]></description>
-    <license><![CDATA[]]></license>
+    <license><![CDATA[© 2026 hikhjin. 개인 블로그 적용·수정 허용, 상업적 이용·재배포 금지]]></license>
   </information>
 
   <author>
-    <name></name>
-    <homepage></homepage>
+    <name>hikhjin</name>
+    <homepage>https://github.com/hikhjin/tistory_skin</homepage>
     <email></email>
   </author>
 
