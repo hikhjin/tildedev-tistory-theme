@@ -318,6 +318,9 @@ body.drawer-open { overflow: hidden; }
   background: var(--inline-code-bg); color: var(--text);
 }
 
+/* 티스토리가 본문 끝에 자동 삽입하는 '카테고리의 다른 글' — 스킨의 .related 로 대체 */
+.post-body .another_category { display: none !important; }
+
 /* 오픈그래프 / 파일 블록 */
 .post-body figure[data-ke-type="opengraph"] a { border: 1px solid var(--border) !important; background: var(--bg-soft) !important; color: var(--text) !important; text-decoration: none; }
 .post-body figure[data-ke-type="opengraph"] .og-title { color: var(--text) !important; }
@@ -375,10 +378,11 @@ body.drawer-open { overflow: hidden; }
 .post-tags a::before { content: "#"; color: var(--text-3); }
 .post-tags a:hover { color: var(--accent); }
 
-.post-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 48px; }
+.post-nav { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; margin-top: 48px; }
 .post-nav:empty { display: none; }
 .post-nav-item {
   display: flex; flex-direction: column; gap: 4px;
+  min-width: 0;
   padding: 16px 18px; border: 1px solid var(--border); border-radius: 10px;
   transition: border-color .15s;
 }

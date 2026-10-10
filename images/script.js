@@ -146,7 +146,10 @@
     var list = $('#toc-list');
     if (!body || !toc || !list) return;
 
-    var heads = $$('h2, h3, h4', body).filter(function (h) { return h.textContent.trim(); });
+    // 티스토리가 본문 끝에 자동으로 붙이는 '카테고리의 다른 글' 제목은 제외
+    var heads = $$('h2, h3, h4', body).filter(function (h) {
+      return h.textContent.trim() && !h.closest('.another_category');
+    });
     if (heads.length < 2) return;
 
     var links = heads.map(function (h, i) {
@@ -209,7 +212,7 @@
     var el = $('#reading-time');
     if (!body || !el) return;
     var chars = body.innerText.replace(/\s+/g, '').length;
-    el.textContent = Math.max(1, Math.round(chars / 500)) + '분 읽기';
+    el.textContent = '⏱ ' + Math.max(1, Math.round(chars / 500)) + ' min read';
   }
 
   function throttle(fn) {

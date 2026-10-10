@@ -81,6 +81,9 @@ public class OrderService {
 k6 run --vus 100 --duration 30s order-test.js</code></pre>
 <h2>정리</h2>
 <p>전파 속성을 고를 때는 트랜잭션 경계뿐 아니라 <b>리소스 점유</b>까지 같이 봐야 한다.</p>
+<div class="another_category another_category_color_gray"><h4>'<a href="#">Backend</a>' 카테고리의 다른 글</h4>
+<table><tr><th><a href="#">Redis 분산 락 vs DB 비관적 락 — 재고 차감에서의 선택</a>&nbsp;&nbsp;<span>(12)</span></th><td>2026.10.02</td></tr>
+<tr><th><a href="#">JPA N+1, fetch join과 EntityGraph 그리고 BatchSize</a>&nbsp;&nbsp;<span>(2)</span></th><td>2026.09.11</td></tr></table></div>
 """
 
 
@@ -137,7 +140,7 @@ def main():
         "s_tag_label": True,
         "tag_label_rep": ", ".join(f'<a href="#" rel="tag">{x}</a>' for x in ["spring", "transaction", "hikaricp"]),
         "s_article_prev": True, "article_prev_link": "#", "article_prev_title": POSTS[1][0],
-        "s_article_next": True, "article_next_link": "#", "article_next_title": "JPA 영속성 컨텍스트와 1차 캐시",
+        "s_article_next": True, "article_next_link": "#", "article_next_title": "[루프팩] volume 3. 낙관적 락과 비관적 락, 정말 시간 차이가 별로 안 날까? 직접 측정해 본 결과",
         "s_article_related": True,
         "s_article_related_rep": [{"article_related_rep_link": "#", "article_related_rep_title": p[0],
                                    "article_related_rep_date": p[2].split(" ")[0] + " " + p[2].split(" ")[1] + " " + p[2].split(" ")[2]}

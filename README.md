@@ -38,5 +38,4 @@ python3 preview/build.py && python3 -m http.server 4173
 
 ## 남은 일
 
-- `preview256.jpg` / `preview560.jpg` / `preview1600.jpg` / `preview.gif` (스킨 등록 방식으로 올릴 때만 필요)
 - `index.xml`의 author / license 채우기
