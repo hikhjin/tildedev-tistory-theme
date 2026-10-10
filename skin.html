@@ -11,7 +11,7 @@
     (function () {
       var pref = '[##_var_default-theme_##]';
       var saved = null;
-      try { saved = localStorage.getItem('mono-theme'); } catch (e) {}
+      try { saved = localStorage.getItem('tildedev-theme'); } catch (e) {}
       var theme = saved || (pref === 'light' || pref === 'dark' ? pref
         : (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
       document.documentElement.setAttribute('data-theme', theme);

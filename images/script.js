@@ -13,7 +13,7 @@
     btn.addEventListener('click', function () {
       var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       root.setAttribute('data-theme', next);
-      try { localStorage.setItem('mono-theme', next); } catch (e) {}
+      try { localStorage.setItem('tildedev-theme', next); } catch (e) {}
     });
   }
 
