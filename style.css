@@ -426,12 +426,14 @@ body.drawer-open { overflow: hidden; }
 .tt_box_namecard .tt_tit_cont { color: var(--text) !important; font-weight: 700; }
 .tt_box_namecard .tt_desc { color: var(--text-2) !important; }
 .tt_box_namecard .tt_btn_subscribe {
-  margin-top: 12px; border: 1px solid var(--border) !important; border-radius: 999px;
+  margin: 12px 0 0 !important; border: 1px solid var(--border) !important; border-radius: 999px;
   background: var(--bg) !important; color: var(--text) !important;
 }
 .tt_box_namecard .tt_btn_subscribe .tt_txt_g { color: var(--text) !important; }
 [data-theme="dark"] .tt_box_namecard .tt_ico_cross { filter: invert(1); }
-.tt_box_namecard .tt_wrap_thumb { flex-shrink: 0; }
+/* 티스토리 기본값: 썸네일에 margin 32px 0 0 0 + 사각 오버레이(::after) → 가운데 정렬 · 원형으로 */
+.tt_box_namecard .tt_wrap_thumb { flex-shrink: 0; margin: 0 !important; border-radius: 50% !important; overflow: hidden; }
+.tt_box_namecard .tt_wrap_thumb::after { border-radius: 50%; }
 .tt_box_namecard .tt_thumb_g { border-radius: 50%; }
 
 .tt-comment-cont { color: var(--text); }
