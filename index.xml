@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<skin>
+  <information>
+    <name>Mono</name>
+    <version>0.1.0</version>
+    <description><![CDATA[개발/기술 블로그용 미니멀 스킨. 라이트/다크, 코드 하이라이트, 목차, 읽기 진행바.]]></description>
+    <license><![CDATA[]]></license>
+  </information>
+
+  <author>
+    <name></name>
+    <homepage></homepage>
+    <email></email>
+  </author>
+
+  <default>
+    <recentEntries>8</recentEntries>
+    <recentComments>5</recentComments>
+    <recentTrackbacks>0</recentTrackbacks>
+    <itemsOnGuestbook>10</itemsOnGuestbook>
+    <tagsInCloud>30</tagsInCloud>
+    <sortInCloud>3</sortInCloud>
+    <expandComment>0</expandComment>
+    <expandTrackback>0</expandTrackback>
+    <lengthOfRecentNotice>30</lengthOfRecentNotice>
+    <lengthOfRecentEntry>30</lengthOfRecentEntry>
+    <lengthOfRecentComment>30</lengthOfRecentComment>
+    <lengthOfRecentTrackback>30</lengthOfRecentTrackback>
+    <lengthOfLink>30</lengthOfLink>
+    <showListOnCategory>1</showListOnCategory>
+    <showListOnArchive>1</showListOnArchive>
+    <commentMessage>
+      <none>댓글이 없습니다.</none>
+      <single>댓글 1개</single>
+    </commentMessage>
+    <trackbackMessage>
+      <none></none>
+      <single></single>
+    </trackbackMessage>
+    <tree>
+      <color>000000</color>
+      <bgColor>ffffff</bgColor>
+      <activeColor>000000</activeColor>
+      <activeBgColor>eeeeee</activeBgColor>
+      <labelLength>30</labelLength>
+      <showValue>1</showValue>
+    </tree>
+    <contentWidth>720</contentWidth>
+  </default>
+
+  <variables>
+    <variablegroup name="디자인">
+      <variable>
+        <name>accent-color</name>
+        <label><![CDATA[강조 색상]]></label>
+        <description><![CDATA[링크, 카테고리, 목차 하이라이트 등에 쓰이는 색]]></description>
+        <type>COLOR</type>
+        <default>#3d63dd</default>
+      </variable>
+      <variable>
+        <name>default-theme</name>
+        <label><![CDATA[기본 테마]]></label>
+        <description><![CDATA[방문자가 직접 전환하기 전의 기본값]]></description>
+        <type>SELECT</type>
+        <option><![CDATA[[{"name":"system","label":"시스템 설정 따름","value":"system"},{"name":"light","label":"라이트","value":"light"},{"name":"dark","label":"다크","value":"dark"}]]]></option>
+        <default>system</default>
+      </variable>
+      <variable>
+        <name>show-thumbnail</name>
+        <label><![CDATA[글 목록 썸네일 표시]]></label>
+        <description><![CDATA[]]></description>
+        <type>BOOL</type>
+        <default>true</default>
+      </variable>
+    </variablegroup>
+  </variables>
+</skin>

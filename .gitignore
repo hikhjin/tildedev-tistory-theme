@@ -1,0 +1,10 @@
+# 로컬 미리보기 결과물 (python3 preview/build.py 로 재생성)
+preview/*.html
+
+# OS / 에디터
+.DS_Store
+.idea/
+.vscode/
+
+# Claude Code 로컬 설정
+.claude/
