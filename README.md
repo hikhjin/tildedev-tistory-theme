@@ -24,6 +24,7 @@
 - 댓글: 목록 · 입력칸 · 로그인 닉네임 · 등록 버튼을 테마 색으로 재스타일 (다크모드 대응)
 - 인용문: 티스토리 기본 글자색(#666/#333)과 박스 배경을 테마 색으로 덮어씀
 - '카테고리의 다른 글' 블록은 숨기고 스킨의 관련 글 목록으로 대체
+- 본문 아래 공감 · 공유 · 통계 · 더보기 버튼 묶음은 티스토리 기본 UI를 그대로 사용 (라이트/다크 모두 정상 표시)
 - 티스토리 CSS가 스킨 CSS보다 늦게 로드되므로 이 영역의 스타일은 `!important`로 덮어씀
 
 **기타**
@@ -41,6 +42,14 @@ images/script.js   테마 · 서랍 · 코드블록 · 표 · 목차 · 진행�
 preview*.jpg/.gif  스킨 목록 썸네일 (스킨 등록용)
 preview/build.py   로컬 미리보기 생성기 (티스토리 업로드 대상 아님)
 ```
+
+## 다운로드
+
+```bash
+git clone https://github.com/hikhjin/tildedev-tistory-theme.git
+```
+
+또는 [저장소](https://github.com/hikhjin/tildedev-tistory-theme) 페이지에서 **Code > Download ZIP**.
 
 ## 적용
 
