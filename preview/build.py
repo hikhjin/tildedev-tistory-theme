@@ -63,7 +63,9 @@ public class OrderService {
 }</code></pre>
 <h3>왜 커넥션이 2개 필요한가</h3>
 <p>외부 트랜잭션은 커밋 전까지 커넥션을 반납하지 않는다. 내부의 새 트랜잭션은 별도 커넥션을 요구하므로, 풀 크기가 <b>10</b>이고 동시 요청이 10개면 모두가 두 번째 커넥션을 기다리며 교착 상태가 된다.</p>
-<blockquote data-ke-style="style1">풀 크기 ≥ 스레드 수 × (중첩 트랜잭션 깊이 + 1) 이어야 안전하다.</blockquote>
+<blockquote data-ke-style="style1"><span style="font-family: 'Noto Serif KR';">낙관적 락이랑 비관적 락, 시간 차이가 별로 안 나더라고요.</span></blockquote>
+<blockquote data-ke-style="style2">풀 크기 ≥ 스레드 수 × (중첩 트랜잭션 깊이 + 1) 이어야 안전하다.</blockquote>
+<blockquote data-ke-style="style3">REQUIRES_NEW는 커넥션을 하나 더 잡는다는 점을 기억하자.</blockquote>
 <h3>측정</h3>
 <table style="border-collapse: collapse; width: 100%; height: 76px;" border="1" data-ke-align="alignLeft" data-ke-style="style12"><tbody>
 <tr style="height: 19px;"><td style="width: 30%; height: 19px;"><b>전파 속성</b></td><td style="width: 30%; height: 19px;"><b>점유 커넥션</b></td><td style="width: 40%; height: 19px;"><b>p99 (ms)</b></td></tr>

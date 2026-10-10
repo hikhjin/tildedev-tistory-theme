@@ -298,9 +298,19 @@ body.drawer-open { overflow: hidden; }
   border-left: 3px solid var(--accent);
   color: var(--text-2);
 }
-.post-body blockquote[data-ke-style="style2"] {
-  border: 0; padding: 0; text-align: center; font-size: 1.1em; font-style: italic;
+/* 티스토리 인용구: style1 = 따옴표, style2 = 세로 바(기본 스타일 그대로), style3 = 박스 */
+/* 티스토리가 배경 이미지로 넣는 회색 따옴표는 제거하고, 위(“) 아래(”) 따옴표를 직접 그림 */
+.post-body blockquote[data-ke-style="style1"] {
+  border: 0 !important; padding: 0 !important; background: none !important;
+  text-align: center; font-size: 1.1em; color: var(--text);
 }
+.post-body blockquote[data-ke-style="style1"]::before,
+.post-body blockquote[data-ke-style="style1"]::after {
+  display: block;
+  font: 700 2.4em/1 Georgia, serif; color: var(--accent);
+}
+.post-body blockquote[data-ke-style="style1"]::before { content: "\201C"; margin-bottom: 8px; }
+.post-body blockquote[data-ke-style="style1"]::after { content: "\201D"; margin-top: 16px; }
 .post-body blockquote[data-ke-style="style3"] {
   padding: 18px 22px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-soft);
 }
@@ -404,6 +414,62 @@ body.drawer-open { overflow: hidden; }
 .related time { flex-shrink: 0; font: 12px var(--font-mono); color: var(--text-3); }
 
 .comments { margin-top: 56px; }
+
+/* ---------- 티스토리 자동 삽입 영역: 네임카드 · 댓글 ----------
+   티스토리 CSS가 스킨 CSS보다 늦게 로드되어 !important 로 덮어씀 */
+.tt_box_namecard {
+  min-height: 0 !important; margin-top: 48px !important; padding: 20px 24px !important;
+  align-items: center; gap: 16px;
+  background: var(--bg-soft) !important; border: 1px solid var(--border) !important; border-radius: 12px;
+}
+.tt_box_namecard .tt_cont { padding: 0 !important; flex: 1; min-width: 0; }
+.tt_box_namecard .tt_tit_cont { color: var(--text) !important; font-weight: 700; }
+.tt_box_namecard .tt_desc { color: var(--text-2) !important; }
+.tt_box_namecard .tt_btn_subscribe {
+  margin-top: 12px; border: 1px solid var(--border) !important; border-radius: 999px;
+  background: var(--bg) !important; color: var(--text) !important;
+}
+.tt_box_namecard .tt_btn_subscribe .tt_txt_g { color: var(--text) !important; }
+[data-theme="dark"] .tt_box_namecard .tt_ico_cross { filter: invert(1); }
+.tt_box_namecard .tt_wrap_thumb { flex-shrink: 0; }
+.tt_box_namecard .tt_thumb_g { border-radius: 50%; }
+
+.tt-comment-cont { color: var(--text); }
+.tt-comment-cont .tt-box-total { border-bottom: 1px solid var(--border) !important; color: var(--text) !important; }
+.tt-comment-cont .tt-box-total .tt_txt_g { color: var(--text) !important; }
+.tt-comment-cont .tt-box-total .tt_num_g { color: var(--accent) !important; }
+.tt-comment-cont .tt-list-reply,
+.tt-comment-cont .tt-item-reply,
+.tt-comment-cont .tt-list-reply-comment { border-color: var(--border) !important; }
+.tt-comment-cont .tt-link-user,
+.tt-comment-cont .tt_desc,
+.tt-comment-cont .tt-cmt { color: var(--text) !important; }
+.tt-comment-cont .tt_date,
+.tt-comment-cont .tt-link-comment,
+.tt-comment-cont .tt_txt_g { color: var(--text-3) !important; }
+.tt-comment-cont .tt-list-modify { background: var(--bg-elev) !important; border-color: var(--border) !important; }
+.tt-comment-cont .tt-list-modify a { color: var(--text-2) !important; }
+[data-theme="dark"] .tt-comment-cont .tt-button-modify { filter: invert(1); }
+
+.tt-comment-cont .tt-box-account input,
+.tt-comment-cont .tt_inp_g {
+  background: var(--bg-soft) !important; color: var(--text) !important;
+  border: 1px solid var(--border) !important; border-radius: 8px;
+}
+.tt-comment-cont .tt-box-textarea,
+.tt-comment-cont .tt-inner-g { background: transparent !important; }
+.tt-comment-cont .tt-inner-g {
+  background: var(--bg-soft) !important; border: 1px solid var(--border) !important; border-radius: 10px; overflow: hidden;
+}
+.tt-comment-cont .tt-inner-g:focus-within { border-color: var(--accent) !important; }
+.tt-comment-cont .tt-cmt:empty::before,
+.tt-comment-cont input::placeholder { color: var(--text-3) !important; }
+.tt-comment-cont .tt-btn_register {
+  border: 0 !important; border-radius: 999px;
+  background: var(--accent) !important; color: #fff !important;
+}
+.tt-comment-cont .tt-btn_register:disabled { background: var(--bg-soft) !important; color: var(--text-3) !important; }
+.tt-comment-cont .tt-xe-label-text { color: var(--text-2) !important; }
 
 /* 보호글 */
 .protected { padding: 40px 0; text-align: center; color: var(--text-2); }
