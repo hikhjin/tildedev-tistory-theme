@@ -304,7 +304,11 @@ body.drawer-open { overflow: hidden; }
 .post-body blockquote[data-ke-style="style3"] {
   padding: 18px 22px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-soft);
 }
-.post-body table { width: 100%; margin: 2em 0; border-collapse: collapse; font-size: 15px; display: block; overflow-x: auto; }
+/* 표: 티스토리 에디터가 넣는 인라인 height 무시 → 항상 전체 표시 */
+.post-body table { width: 100%; margin: 2em 0; border-collapse: collapse; font-size: 15px; }
+.post-body table, .post-body tr, .post-body th, .post-body td { height: auto !important; }
+.post-body .table-wrap { margin: 2em 0; overflow-x: auto; overflow-y: hidden; }
+.post-body .table-wrap > table { margin: 0; }
 .post-body th, .post-body td { padding: 10px 14px; border: 1px solid var(--border) !important; text-align: left; }
 .post-body th { background: var(--bg-soft); font-weight: 600; }
 [data-theme="dark"] .post-body table td,

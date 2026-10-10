@@ -65,8 +65,12 @@ public class OrderService {
 <p>외부 트랜잭션은 커밋 전까지 커넥션을 반납하지 않는다. 내부의 새 트랜잭션은 별도 커넥션을 요구하므로, 풀 크기가 <b>10</b>이고 동시 요청이 10개면 모두가 두 번째 커넥션을 기다리며 교착 상태가 된다.</p>
 <blockquote data-ke-style="style1">풀 크기 ≥ 스레드 수 × (중첩 트랜잭션 깊이 + 1) 이어야 안전하다.</blockquote>
 <h3>측정</h3>
-<table><thead><tr><th>전파 속성</th><th>점유 커넥션</th><th>p99 (ms)</th></tr></thead>
-<tbody><tr><td>REQUIRED</td><td>1</td><td>42</td></tr><tr><td>REQUIRES_NEW</td><td>2</td><td>1,820</td></tr><tr><td>이벤트 + AFTER_COMMIT</td><td>1 → 1</td><td>47</td></tr></tbody></table>
+<table style="border-collapse: collapse; width: 100%; height: 76px;" border="1" data-ke-align="alignLeft" data-ke-style="style12"><tbody>
+<tr style="height: 19px;"><td style="width: 30%; height: 19px;"><b>전파 속성</b></td><td style="width: 30%; height: 19px;"><b>점유 커넥션</b></td><td style="width: 40%; height: 19px;"><b>p99 (ms)</b></td></tr>
+<tr style="height: 19px;"><td style="height: 19px;">REQUIRED</td><td style="height: 19px;">1</td><td style="height: 19px;">42</td></tr>
+<tr style="height: 19px;"><td style="height: 19px;">REQUIRES_NEW</td><td style="height: 19px;">2</td><td style="height: 19px;">1,820</td></tr>
+<tr style="height: 19px;"><td style="height: 19px;">이벤트 + AFTER_COMMIT</td><td style="height: 19px;">1 → 1</td><td style="height: 19px;">47</td></tr>
+</tbody></table>
 <h2>해결 방안</h2>
 <p>세 가지 선택지가 있었다.</p>
 <ul><li>풀 크기를 늘린다 — 근본 해결은 아니다.</li><li>이력 저장을 <code>@TransactionalEventListener(phase = AFTER_COMMIT)</code>로 분리한다.</li><li>이력은 메시지 큐로 비동기 처리한다.</li></ul>

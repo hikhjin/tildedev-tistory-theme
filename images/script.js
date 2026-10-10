@@ -139,6 +139,19 @@
     });
   }
 
+  /* ---------- Table: 넓은 표만 가로 스크롤 ---------- */
+  function initTables() {
+    var body = $('#post-body');
+    if (!body) return;
+    $$('table', body).forEach(function (table) {
+      if (table.closest('.another_category') || table.parentNode.classList.contains('table-wrap')) return;
+      var wrap = document.createElement('div');
+      wrap.className = 'table-wrap';
+      table.parentNode.insertBefore(wrap, table);
+      wrap.appendChild(table);
+    });
+  }
+
   /* ---------- TOC ---------- */
   function initToc() {
     var body = $('#post-body');
@@ -228,6 +241,7 @@
     initTheme();
     initDrawer();
     initCodeBlocks();
+    initTables();
     initToc();
     initScroll();
     initReadingTime();
