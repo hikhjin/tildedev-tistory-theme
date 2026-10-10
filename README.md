@@ -1,4 +1,4 @@
-# Mono
+# TildeDev
 
 개발/기술 블로그용 미니멀 티스토리 스킨.
 
@@ -20,12 +20,15 @@
 - 인용구 3종 지원: 따옴표(위아래 “ ”, 가운데 정렬) · 세로 바 · 박스
 
 **티스토리 자동 삽입 영역**
-- 블로그 소개 카드(네임카드) · 댓글을 스킨 테마 색에 맞춰 재스타일 (다크모드 대응)
+- 블로그 소개 카드(네임카드): 테마 색 카드, 원형 프로필 사진 세로 가운데 정렬
+- 댓글: 목록 · 입력칸 · 로그인 닉네임 · 등록 버튼을 테마 색으로 재스타일 (다크모드 대응)
+- 인용문: 티스토리 기본 글자색(#666/#333)과 박스 배경을 테마 색으로 덮어씀
 - '카테고리의 다른 글' 블록은 숨기고 스킨의 관련 글 목록으로 대체
 - 티스토리 CSS가 스킨 CSS보다 늦게 로드되므로 이 영역의 스타일은 `!important`로 덮어씀
 
 **기타**
 - 단축키: `/` 검색, `Esc` 서랍 닫기
+- 푸터: `© {올해} {블로그 제목}. All rights reserved.` + GitHub 링크 (연도는 스크립트로 자동 갱신)
 - 맨 위로 버튼, 인쇄용 스타일
 
 ## 파일 구조
@@ -34,7 +37,7 @@
 skin.html          HTML 템플릿
 style.css          스타일 (색상 토큰은 상단 :root / [data-theme="dark"])
 index.xml          스킨 정보 + 스킨 옵션(강조 색상, 기본 테마, 썸네일 표시)
-images/script.js   테마 · 서랍 · 코드블록 · 표 · 목차 · 진행바 · 읽기 시간
+images/script.js   테마 · 서랍 · 코드블록 · 표 · 목차 · 진행바 · 읽기 시간 · 푸터 연도
 preview*.jpg/.gif  스킨 목록 썸네일 (스킨 등록용)
 preview/build.py   로컬 미리보기 생성기 (티스토리 업로드 대상 아님)
 ```
@@ -47,7 +50,7 @@ preview/build.py   로컬 미리보기 생성기 (티스토리 업로드 대상 
 2. **추가**로 아래 8개 파일 업로드
    - `skin.html`, `style.css`, `index.xml`, `images/script.js`
    - `preview.gif`, `preview256.jpg`, `preview560.jpg`, `preview1600.jpg`
-3. **저장** → **스킨 보관함**에서 Mono 선택 후 **적용**
+3. **저장** → **스킨 보관함**에서 TildeDev 선택 후 **적용**
 
 ### 방법 2: 스킨 편집
 
@@ -72,7 +75,7 @@ preview/build.py   로컬 미리보기 생성기 (티스토리 업로드 대상 
 
 - **색상**: `style.css` 상단 `:root`(라이트) / `[data-theme="dark"]`(다크)의 변수 수정. 강조 색은 스킨 옵션에서 변경 가능
 - **폰트**: 본문 [Pretendard](https://github.com/orioncactus/pretendard), 코드 · 라벨 [JetBrains Mono](https://www.jetbrains.com/lp/mono/). `style.css`의 `--font-sans`, `--font-mono`와 `skin.html`의 폰트 `<link>` 수정
-- **푸터 링크**: `skin.html` 하단 `<footer>`의 GitHub 링크 수정
+- **푸터**: `skin.html` 하단 `<footer>`에서 저작권 문구와 GitHub 링크 수정. 블로그 이름은 `[##_title_##]`(티스토리 블로그 제목)를 따름
 
 ## 로컬 미리보기
 

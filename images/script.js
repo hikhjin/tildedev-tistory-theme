@@ -1,4 +1,4 @@
-/* Mono — tistory skin script */
+/* TildeDev — tistory skin script */
 (function () {
   'use strict';
 

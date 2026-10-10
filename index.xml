@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <skin>
   <information>
-    <name>Mono</name>
+    <name>TildeDev</name>
     <version>0.1.0</version>
     <description><![CDATA[개발/기술 블로그용 미니멀 스킨. 라이트/다크, 코드 하이라이트, 목차, 읽기 진행바.]]></description>
     <license><![CDATA[]]></license>
