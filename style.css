@@ -9,8 +9,8 @@
   --toc-w: 220px;
   --header-h: 60px;
 
-  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", monospace;
 
   --bg: #ffffff;
   --bg-soft: #f6f7f9;
@@ -279,6 +279,8 @@ body.drawer-open { overflow: hidden; }
 
 /* ---------- Post body (티스토리 에디터 출력) ---------- */
 .post-body { font-size: 17px; line-height: 1.85; }
+/* 에디터에서 '기본서체'를 직접 고르면 AppleSDGothicNeo-Regular, 'Malgun Gothic', ... 인라인 스타일이 붙으므로 스킨 서체로 되돌림 */
+.post-body [style*="AppleSDGothicNeo-Regular"] { font-family: inherit !important; }
 .post-body p { margin: 0 0 1.25em; }
 .post-body h2, .post-body h3, .post-body h4 { line-height: 1.4; letter-spacing: -.02em; font-weight: 700; }
 .post-body h2 { margin: 2.4em 0 .8em; font-size: 1.55em; }
